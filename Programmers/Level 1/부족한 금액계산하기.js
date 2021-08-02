@@ -7,7 +7,7 @@ function solution(price, money, count) {
          .map((el, idx) => el = el * (idx + 1))
          .reduce((acc, cur) => acc + cur)
 
-    return result - money;
+    return esult > money ? result - money : 0;
 }
 
 // 풀이 2 // 
