@@ -2,7 +2,6 @@ function solution(n, lost, reserve) {
     lost = lost.sort((a, b) => a - b)
     reserve = reserve.sort((a, b) => a - b)
 
-    
     // 겹치는(수가 같은 경우) 부분 제거
     for (let i = 0; i < lost.length; i++) {
         let duplicNum = reserve.indexOf(lost[i]);
@@ -15,7 +14,6 @@ function solution(n, lost, reserve) {
 
     // 최소 참여 인원
     let students = n - lost.length;
-    
     
     // 순서대로 나눠주기 
     for (let i = 0; i < reserve.length; i++) {
