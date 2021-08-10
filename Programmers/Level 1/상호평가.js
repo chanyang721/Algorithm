@@ -8,22 +8,17 @@ function solution(scores) {
     // 배열의 최대값, 최소값을 계산하고, 중복된 값이 존재하는지 확인한다. 
     // 자기 자신이 평가한 값이 최대값, 최소값이고, 중복된 값이 없다면 0으로 만든다. 
     // 그게 아니라면 그대로 둔다. 
-    // 결과를 담을 result 문자열 선언
-    // 보조함수 function makeScoreToGrade (score) => { }
-    // for i => 0부터, scores.length까지 1씩 증가,
-    //   let max 최대값 저장 변수 선언
-    //   let min 최소값 저장 변수 선언
-    //   만약 scores[i][i]의 값이 최대값 혹은 최소값이고, 중복된 값이 없다면 0으로 변경한다.
     let result = '';
     const makeScoreToGrade = function (score) {
         let GradeScore = Math.floor(score / 10)
         if (GradeScore === 0 || GradeScore === 9) result += "A";
         else if (GradeScore === 8) result += "B";
         else if (GradeScore === 7) result += "C";
-        else if (GradeScore === 5 || GradeScore === 6) result += "D";
+        else if (GradeScore === 6 || GradeScore === 5) result += "D";
         else result += "F";
         return result;
     }
+    
     let L = scores.length;
     let baseArr = [];
     for (let i = 0; i < L; i++) {
@@ -38,19 +33,30 @@ function solution(scores) {
     }
     
     for (let i = 0; i < baseArr.length; i++) {
+        let length = baseArr[i].length;
         let max = Math.max(...baseArr[i]);
         let min = Math.min(...baseArr[i]);
         if (baseArr[i][i] === max) {
             baseArr[i][i] = 0;
-            if (baseArr[i].includes(max)) baseArr[i][i] = max;
+            length--
+            if (baseArr[i].includes(max)) { 
+                baseArr[i][i] = max
+                length++
+            }
         }
         else if (baseArr[i][i] === min) {
             baseArr[i][i] = 0;
-            if (baseArr[i].includes(min)) baseArr[i][i] = min;
+            length--
+            if (baseArr[i].includes(min)) {
+                baseArr[i][i] = min
+                length++
+            }
         }
-        let avgeScore = baseArr[i].reduce((acc, cur) => acc + cur) / 5;
+        let avgeScore = baseArr[i].reduce((acc, cur) => acc + cur) / length;
         makeScoreToGrade(avgeScore)
     }
     
-    return result;
+    let edgeCase = scores.flat().reduce((acc, cur) => acc + cur)
+    
+    return edgeCase === 0 ? "F".repeat(L) : result;
 }
