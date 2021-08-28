@@ -15,3 +15,4 @@ function solution(d, budget) {
     
     return idx - 1;
 }
+
