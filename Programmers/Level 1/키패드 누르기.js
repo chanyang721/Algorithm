@@ -38,10 +38,10 @@ function solution(numbers, hand) {
         // return 가까운 손
         let { row: targetRow, col: targetCol } = database[target];
         let { row: leftRow, col: leftCol } = database[left];
-        let { row: RightRow, col: RightCol } = database[right];
+        let { row: rightRow, col: rightCol } = database[right];
         
         let leftDistance = Math.abs(targetCol - leftCol) + Math.abs(targetRow - leftRow);
-        let rightDistance = Math.abs(targetCol - RightCol) + Math.abs(targetRow - RightRow);
+        let rightDistance = Math.abs(targetCol - rightCol) + Math.abs(targetRow - rightRow);
         
         if (leftDistance === rightDistance) closeHand = hand;
         else closeHand = leftDistance < rightDistance ? "left" : "right";
