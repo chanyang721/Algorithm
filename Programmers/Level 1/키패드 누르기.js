@@ -18,20 +18,20 @@ function solution(numbers, hand) {
     const calculateDistance = (target, left, right, hand) => {
     // target이 2, 5, 8, 0이면, 현재 손들의 위치를 넣고 각 위치를 계산하여 가까운 손을 리턴
         let database = { 
-            1: { row: 0, col: 0}, 
-            2: { row: 0, col: 1}, 
-            3: { row: 0, col: 2}, 
-            4: { row: 1, col: 0}, 
-            5: { row: 1, col: 1}, 
-            6: { row: 1, col: 2}, 
-            7: { row: 2, col: 0}, 
-            8: { row: 2, col: 1}, 
-            9: { row: 2, col: 2}, 
-            0: { row: 3, col: 1}, 
-            "*": { row: 3, col: 0}, 
-            "#": { row: 3, col: 2} 
+            1: { row: 0, col: 0 }, 
+            2: { row: 0, col: 1 }, 
+            3: { row: 0, col: 2 }, 
+            4: { row: 1, col: 0 }, 
+            5: { row: 1, col: 1 }, 
+            6: { row: 1, col: 2 }, 
+            7: { row: 2, col: 0 }, 
+            8: { row: 2, col: 1 }, 
+            9: { row: 2, col: 2 }, 
+            0: { row: 3, col: 1 }, 
+            "*": { row: 3, col: 0 }, 
+            "#": { row: 3, col: 2 } 
         }
-        // 눌러야 할 숫자 target을 arr에서 찾는다.
+        // 눌러야 할 숫자 target을 database에서 찾는다.
         // 현재 손들의 위치를 받는다.
         // 각 거리를 구한다.
         // 만약 거리가 같다면 hand를 리턴
