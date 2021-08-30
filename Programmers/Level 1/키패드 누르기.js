@@ -16,7 +16,6 @@ function solution(numbers, hand) {
     // 3 -> 5: row가 다르다면 거리는 Math.abs(출발El의 col - 목표El의 col) + Math.abs(출발El의 row - 목표El의 row)
     
     const calculateDistance = (target, left, right, hand) => {
-    // target이 2, 5, 8, 0이면, 현재 손들의 위치를 넣고 각 위치를 계산하여 가까운 손을 리턴
         let database = { 
             1: { row: 0, col: 0 }, 
             2: { row: 0, col: 1 }, 
