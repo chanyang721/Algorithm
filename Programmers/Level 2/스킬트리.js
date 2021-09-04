@@ -11,7 +11,7 @@ function solution(skill, skill_trees) {
             let base = skill_trees[i]
             if (skill.includes(base[j])) el += base[j];
         }
-        console.log(el)
+
         if (el === "") count++;
         
         for (let i = 0; i < el.length; i++) {
