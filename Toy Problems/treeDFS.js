@@ -1,33 +1,25 @@
 let dfs = function (node) {
     // TODO: 여기에 코드를 작성합니다.
-    // 노드객체를 입력받아, 해당 노드를 root로 dfs를 한다. 
-    // 탐색 순서대로 노드의 value가 저장된 배열을 리턴
-    //// 수도 코드 ////  
-    // 왼쪽 끝까지 간다.
-    // 값을 담고 재귀로 이전으로 돌아와 오른쪽노드으로 가서 다시 재귀(왼쪽)으로 간다. 
-    //// bare ////
-    // 결과 배열 선언하고 node.value를 기본값으로 넣는다. 
-    // node.children.length === 0이면, 리턴;
-    //// recursive //// 
-    // node.children.length !== 0이면,
-    //    for -> 0부터 length까지, 
-    //      node.children[i]를 재귀함수의 node로 넣는다.
     let result = [];
   
-    const recursive = (treeNode, memo) => {
-      memo.push(treeNode.value);
-      // if (treeNode.children.length === 0) {
-      //   return; 
-      // }
-      // else {
-        for (let i = 0; i < treeNode.children.length; i += 1) {
-          recursive(treeNode.children[i], memo)
-        }
-      // }
-      return memo;
-    }
+    // const recursive = (treeNode, memo) => {
+    //   memo.push(treeNode.value);
+    //   for (let i = 0; i < treeNode.children.length; i += 1) {
+    //       recursive(treeNode.children[i], memo)
+    //   }
+    //   return memo;
+    // }
   
-    recursive(node, result)
+    // recursive(node, result)
+    // return result;
+    
+    //////////// 리팩토링 ///////////////
+    let result = [node.value];
+
+    node.children.forEach(el => {
+      result = result.concat(dfs(el));
+    })
+  
     return result;
   };
   
