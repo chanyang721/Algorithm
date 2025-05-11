@@ -66,10 +66,10 @@ void makePermutation(int n, int r, int depth)
 
     for (int i = depth; i < n; i++)
     {
-        cout << i << " : " << depth << "를 바꾼다!\n";
+        cout << n << " : " << r << " : " << depth << "를 바꾼다!\n";
         swap(a[i], a[depth]);
         makePermutation(n, r, depth + 1);
-        cout << i << " : " << depth << "를 원래대로 되돌린다\n";
+        cout << n << " : " << r << " : " << depth << "를 원래대로 되돌린다\n";
         swap(a[i], a[depth]);
     };
 
