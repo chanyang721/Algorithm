@@ -27,19 +27,19 @@ using namespace std;
 /**
  * do while(next_permutation(a.begin(), a.end())) 문법
  */
-// int main()
-// {
-//     // int a[] = {1, 2, 3};
-//     vector<int> a = {2, 1, 3, 100, 200};
-//     sort(a.begin(), a.end()); // 오름차순으로 정렬
-//     do
-//     {
-//         for (int i : a)
-//             cout << i << " ";
-//         cout << "\n";
-//         // } while(next_permutation(&a[0], &a[0] + 3));
-//     } while (next_permutation(a.begin(), a.end()));
-// };
+int main()
+{
+    // int a[] = {1, 2, 3};
+    vector<int> a = {2, 1, 3, 100, 200};
+    sort(a.begin(), a.end()); // 오름차순으로 정렬
+    do
+    {
+        for (int i : a)
+            cout << i << " ";
+        cout << "\n";
+        // } while(next_permutation(&a[0], &a[0] + 3));
+    } while (next_permutation(a.begin(), a.end()));
+};
 
 /**
  * 재귀 함수로 순열 구현
