@@ -18,14 +18,14 @@ int main()
         cout << a << " ";
     cout << "\n";
 
-    v.erase(v.begin(), v.begin() + 3); // 백터 맨 앞부터 3번째 요소까지 제거
+    v.erase(v.begin(), v.begin() + 3); // 백터 맨 앞부터 3번째 요소 이전까지 제거
     // erase(from, to) : 배열의 인덱스가 from부터 to 이전까지 제거
 
     for (int a : v) // 벡터 범위 기반 for 문
         cout << a << " ";
     cout << "\n";
 
-    auto a = find(v.begin(), v.end(), 100);
+    auto a = find(v.begin(), v.end(), 100); // auto 자동 타입 추론
     if (a == v.end())
         cout << "not found" << "\n";
 
