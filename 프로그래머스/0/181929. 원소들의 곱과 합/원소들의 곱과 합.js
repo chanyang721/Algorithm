@@ -5,6 +5,6 @@ function solution(num_list) {
         sum += el
         multi *= el
     })
-    var answer = sum**2 > multi ? 1 : 0
+    var answer = Math.pow(sum, 2) > multi ? 1 : 0
     return answer;
 }
