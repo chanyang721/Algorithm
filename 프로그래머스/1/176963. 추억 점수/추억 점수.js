@@ -1,5 +1,4 @@
 function solution(name, yearning, photo) {
-    
     // sum 사진 속 그리움 점수 = 추억 점수
     // 인물의 그리움 점수 없으면 0점
     // map.set(name -> yearning)
@@ -17,9 +16,7 @@ function solution(name, yearning, photo) {
                 result += map.get(names[j])
             }
         }
-        
         answer.push(result)
     }
-
     return answer;
 }
