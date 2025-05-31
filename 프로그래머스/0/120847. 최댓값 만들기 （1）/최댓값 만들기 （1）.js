@@ -13,8 +13,6 @@ function solution(numbers) {
     // }
     
     // 2. sort (b-a), 0 * 1
-    var answer = 0;
-    numbers.sort((a, b) => b - a)
-    answer = numbers[0] * numbers[1]
-    return answer;
+    const [ a, b ] = numbers.sort((a, b) => b - a)
+    return a * b;
 }
