@@ -1,0 +1,6 @@
+-- 코드를 입력하세요
+--  젊은 동물의 아이디ANIMAL_ID와 이름NAME을 조회
+-- INTAKE_CONDITION != "Aged"
+SELECT ANIMAL_ID, NAME
+FROM ANIMAL_INS
+WHERE INTAKE_CONDITION != "Aged"
